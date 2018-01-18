@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests;
+use Image;
 
 use App\Post;
+
 
 class PostController extends Controller
 {
@@ -30,17 +33,26 @@ class PostController extends Controller
         return view('posts.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
         $this->validate(request(), [
             'title' => 'required|min:2',
-            'body' => 'required'
+            'body' => 'required',
+            'img' => 'required'
         ]);
 
+        $img = $request->file('img');
+        $filename = time() . '.' . $img->getClientOriginalExtension();
+        Image::make($img)->save( public_path('/uploads/setups/' . $filename ) );
+
         auth()->user()->publish(
-            new Post(request(['title', 'body']))
+            new Post([
+                'title' => request('title'), 
+                'body' => request('body'), 
+                'img' => $filename
+                ])
         );
-        
+
         return redirect('/');
     }
 }

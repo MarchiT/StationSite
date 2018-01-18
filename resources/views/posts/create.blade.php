@@ -7,9 +7,14 @@
 
         <hr>
 
-        <form method="POST" action="/posts">
+        <form enctype="multipart/form-data" method="POST" action="/posts">
 
             {{ csrf_field() }}
+            
+            <div class="form-group">
+                <label>Image</label>
+                <input type="file" name="img">
+            </div>
 
             <div class="form-group">
                 <label for="title">Title</label>
