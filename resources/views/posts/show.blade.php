@@ -1,4 +1,4 @@
-@extends ('layouts.master')
+@extends ('layouts.merged')
 
 @section ('content')
     <div class="col-sm-8 blog-main">
