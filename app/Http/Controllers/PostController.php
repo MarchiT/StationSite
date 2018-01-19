@@ -55,6 +55,8 @@ class PostController extends Controller
                 ])
         );
 
+        session()->flash('message', 'New post was created successfully.');
+
         return redirect('/');
     }
 }

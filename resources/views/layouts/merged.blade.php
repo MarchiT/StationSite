@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="/css/message.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -80,6 +81,13 @@
                 </div>
             </div>
         </nav>
+
+
+        @if ($flash = session('message'))
+        <div id="flash-message" class="alert alert-success" role="alert">
+            {{ $flash }}
+        </div>
+        @endif
 
        <div class="blog-header">
         <div class="container">
