@@ -9,15 +9,14 @@
             <h1 class="card-title"><strong>{{ $post->title }}</strong></h1>
 
             @if (count($post->tags))
-                <ul>
                     @foreach ($post->tags as $tag)
-                        <li>
-                            <a href="/posts/tags/{{ $tag->name }}">{{ $tag->name }}</a>
-                        </li>
+                        <a href="/posts/tags/{{ $tag->name }}">
+                            <button type="button" class="btn btn-outline-dark">{{ $tag->name }}</button>
+                        </a>
                     @endforeach
-                </ul>
             @endif
-
+            
+            <hr>
             <p class="card-text">{{ $post->body }}</p>
             <p class="card-text"><small class="text-muted">Last updated {{ $post->updated_at->diffForHumans() }}</small></p>
         </div>
