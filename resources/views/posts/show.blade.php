@@ -7,6 +7,17 @@
         <img class="card-img-top" style="width:100%; height:auto;" src="/uploads/setups/{{ $post->img }}" alt="Card image cap">
         <div class="card-body">
             <h1 class="card-title"><strong>{{ $post->title }}</strong></h1>
+
+            @if (count($post->tags))
+                <ul>
+                    @foreach ($post->tags as $tag)
+                        <li>
+                            <a href="/posts/tags/{{ $tag->name }}">{{ $tag->name }}</a>
+                        </li>
+                    @endforeach
+                </ul>
+            @endif
+
             <p class="card-text">{{ $post->body }}</p>
             <p class="card-text"><small class="text-muted">Last updated {{ $post->updated_at->diffForHumans() }}</small></p>
         </div>
