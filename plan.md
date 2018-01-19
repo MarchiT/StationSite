@@ -3,7 +3,7 @@
 ### What is it about?
 
 ### Database
-![alt text](https://github.com/MarchiT/StationSite/tree/master/public/images/database.png "Logo Title Text 1")
+![Ops something goofed](/public/images/database.png)
 
 ### Users
 - register
