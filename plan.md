@@ -3,32 +3,27 @@
 ### What is it about?
 
 ### Database
-![alt text](https://github.com/MarchiT/StationSite/tree/master/public/images/database.png "Logo Title Text 1")
+![alt text](https://github.com/MarchiT/StationSite/tree/master/public/images/database.png "Database image")
 
 ### Users
 - register
-	+ validation
-	+ display errors
+	+ validation {display errors}
 - login
-	+ validation
-	+ display errors
+	+ when logged out {can't comment + publish}
+	+ validation {display errors}
 	+ remembers session
-	+ logout
-	+ profile
-	+ nav: name + picture
+	+ nav {name + profile, logout + profile}
 	+ avatar can be uploaded
-	+ can't publish
-	+ can't comment
-
+	
 ### Posts
-+ publish
++ publish {validation}
 + flash message
 + show
 + in latest order
 
 ### Comments
+- comment {validation & error handling
 - display
-- validation & error handling
 - relation to post and user
 
 ### Archives
